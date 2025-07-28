@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changer de couleur</title>
+    <style>
+        body {
+            font-family: verdana;
+            background-color: #b4eeff;
+            margin: 6px;
+            padding: 8px;
+            transition: background-color 0.5s ease;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="changeColorButton">Changer la couleur</button>
+
+    <script>
+        document.getElementById('changeColorButton').addEventListener('click', function() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 15)];
+            }
+            document.body.style.backgroundColor = color;
+        });
+    </script>
+</body>
+</html>
